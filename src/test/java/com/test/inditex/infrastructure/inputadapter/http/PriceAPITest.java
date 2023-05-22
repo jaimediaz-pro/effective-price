@@ -91,4 +91,16 @@ class PriceAPITest {
                 .andExpect(MockMvcResultMatchers.jsonPath("price").value(38.95))
                 .andExpect(MockMvcResultMatchers.jsonPath("currency").value("EUR"));
     }
+
+    @Test
+    public void test6_NotFound() throws Exception {
+        mockMvc.perform(get("/price/get")
+                        .param("effectiveDate", "2020-06-16 21:00:00")
+                        .param("productId", "35455")
+                        .param("brandId", "2"))
+                .andExpect(status().isNotFound())
+                .andExpect(MockMvcResultMatchers.jsonPath("title").value("Effective price not found"))
+                .andExpect(MockMvcResultMatchers.jsonPath("detail").value("Effective price not found in database"))
+                .andExpect(MockMvcResultMatchers.jsonPath("status").value(404));
+    }
 }
