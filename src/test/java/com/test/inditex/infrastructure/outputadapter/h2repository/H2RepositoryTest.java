@@ -39,7 +39,9 @@ class H2RepositoryTest {
     }
 
     @Test
-    void getEffectivePrice2() {
+    void
+
+    getEffectivePrice2() {
         // test for price obtained with effective date
         List<Price> priceList = new ArrayList<>();
         Mockito.when(jdbcTemplate.query(anyString(), Mockito.any(RowMapper.class))).thenReturn(priceList);
