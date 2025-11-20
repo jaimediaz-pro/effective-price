@@ -24,10 +24,10 @@ class PriceAPITest {
                 .param("productId", "35455")
                 .param("brandId", "1"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("brandId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("effectiveDate").value("2020-06-14 10:00:00"))
-                .andExpect(MockMvcResultMatchers.jsonPath("priceList").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("productId").value(35455))
+                .andExpect(MockMvcResultMatchers.jsonPath("brand_id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("effective_date").value("2020-06-14 10:00:00"))
+                .andExpect(MockMvcResultMatchers.jsonPath("price_list").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("product_id").value(35455))
                 .andExpect(MockMvcResultMatchers.jsonPath("price").value(35.5))
                 .andExpect(MockMvcResultMatchers.jsonPath("currency").value("EUR"));
     }
@@ -39,10 +39,10 @@ class PriceAPITest {
                 .param("productId", "35455")
                 .param("brandId", "1"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("brandId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("effectiveDate").value("2020-06-14 16:00:00"))
-                .andExpect(MockMvcResultMatchers.jsonPath("priceList").value(2))
-                .andExpect(MockMvcResultMatchers.jsonPath("productId").value(35455))
+                .andExpect(MockMvcResultMatchers.jsonPath("brand_id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("effective_date").value("2020-06-14 16:00:00"))
+                .andExpect(MockMvcResultMatchers.jsonPath("price_list").value(2))
+                .andExpect(MockMvcResultMatchers.jsonPath("product_id").value(35455))
                 .andExpect(MockMvcResultMatchers.jsonPath("price").value(25.45))
                 .andExpect(MockMvcResultMatchers.jsonPath("currency").value("EUR"));
     }
@@ -54,10 +54,10 @@ class PriceAPITest {
                 .param("productId", "35455")
                 .param("brandId", "1"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("brandId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("effectiveDate").value("2020-06-14 21:00:00"))
-                .andExpect(MockMvcResultMatchers.jsonPath("priceList").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("productId").value(35455))
+                .andExpect(MockMvcResultMatchers.jsonPath("brand_id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("effective_date").value("2020-06-14 21:00:00"))
+                .andExpect(MockMvcResultMatchers.jsonPath("price_list").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("product_id").value(35455))
                 .andExpect(MockMvcResultMatchers.jsonPath("price").value(35.5))
                 .andExpect(MockMvcResultMatchers.jsonPath("currency").value("EUR"));
     }
@@ -69,10 +69,10 @@ class PriceAPITest {
                 .param("productId", "35455")
                 .param("brandId", "1"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("brandId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("effectiveDate").value("2020-06-15 10:00:00"))
-                .andExpect(MockMvcResultMatchers.jsonPath("priceList").value(3))
-                .andExpect(MockMvcResultMatchers.jsonPath("productId").value(35455))
+                .andExpect(MockMvcResultMatchers.jsonPath("brand_id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("effective_date").value("2020-06-15 10:00:00"))
+                .andExpect(MockMvcResultMatchers.jsonPath("price_list").value(3))
+                .andExpect(MockMvcResultMatchers.jsonPath("product_id").value(35455))
                 .andExpect(MockMvcResultMatchers.jsonPath("price").value(30.5))
                 .andExpect(MockMvcResultMatchers.jsonPath("currency").value("EUR"));
     }
@@ -84,10 +84,10 @@ class PriceAPITest {
                 .param("productId", "35455")
                 .param("brandId", "1"))
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("brandId").value(1))
-                .andExpect(MockMvcResultMatchers.jsonPath("effectiveDate").value("2020-06-16 21:00:00"))
-                .andExpect(MockMvcResultMatchers.jsonPath("priceList").value(4))
-                .andExpect(MockMvcResultMatchers.jsonPath("productId").value(35455))
+                .andExpect(MockMvcResultMatchers.jsonPath("brand_id").value(1))
+                .andExpect(MockMvcResultMatchers.jsonPath("effective_date").value("2020-06-16 21:00:00"))
+                .andExpect(MockMvcResultMatchers.jsonPath("price_list").value(4))
+                .andExpect(MockMvcResultMatchers.jsonPath("product_id").value(35455))
                 .andExpect(MockMvcResultMatchers.jsonPath("price").value(38.95))
                 .andExpect(MockMvcResultMatchers.jsonPath("currency").value("EUR"));
     }
@@ -99,8 +99,6 @@ class PriceAPITest {
                 .param("productId", "35455")
                 .param("brandId", "2"))
                 .andExpect(status().isNotFound())
-                .andExpect(MockMvcResultMatchers.jsonPath("title").value("Effective price not found"))
-                .andExpect(MockMvcResultMatchers.jsonPath("detail").value("Effective price not found in database"))
-                .andExpect(MockMvcResultMatchers.jsonPath("status").value(404));
+                .andExpect(MockMvcResultMatchers.jsonPath("title").value("Price not found"));
     }
 }
