@@ -10,6 +10,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+import static java.util.Objects.isNull;
+
 import java.time.LocalDateTime;
 
 /**
@@ -93,22 +95,22 @@ public final class Price {
         }
 
         private void validate() {
-            if (brandId == null) {
+            if (isNull(brandId)) {
                 throw new IllegalArgumentException("BrandId cannot be null");
             }
-            if (productId == null) {
+            if (isNull(productId)) {
                 throw new IllegalArgumentException("ProductId cannot be null");
             }
-            if (validityPeriod == null) {
+            if (isNull(validityPeriod)) {
                 throw new IllegalArgumentException("Validity period cannot be null");
             }
-            if (priceList == null || priceList <= 0) {
+            if (isNull(priceList) || priceList <= 0) {
                 throw new IllegalArgumentException("Price list must be positive");
             }
-            if (priority == null || priority < 0) {
+            if (isNull(priority) || priority < 0) {
                 throw new IllegalArgumentException("Priority cannot be null or negative");
             }
-            if (money == null) {
+            if (isNull(money)) {
                 throw new IllegalArgumentException("Money cannot be null");
             }
         }
