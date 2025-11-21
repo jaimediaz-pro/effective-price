@@ -15,8 +15,8 @@ class DateRangeTest {
 
         DateRange dateRange = DateRange.of(start, end);
 
-        assertEquals(start, dateRange.getStartDate());
-        assertEquals(end, dateRange.getEndDate());
+        assertEquals(start, dateRange.startDate());
+        assertEquals(end, dateRange.endDate());
     }
 
     @Test
@@ -59,8 +59,8 @@ class DateRangeTest {
 
         DateRange dateRange = DateRange.of(date, date);
 
-        assertEquals(date, dateRange.getStartDate());
-        assertEquals(date, dateRange.getEndDate());
+        assertEquals(date, dateRange.startDate());
+        assertEquals(date, dateRange.endDate());
     }
 
     @Test

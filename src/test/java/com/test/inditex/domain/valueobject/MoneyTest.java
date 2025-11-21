@@ -12,30 +12,30 @@ class MoneyTest {
     void shouldCreateMoneyWithDoubleAmount() {
         Money money = Money.of(35.50, "EUR");
 
-        assertEquals(new BigDecimal("35.50"), money.getAmount());
-        assertEquals("EUR", money.getCurrency());
+        assertEquals(new BigDecimal("35.50"), money.amount());
+        assertEquals("EUR", money.currency());
     }
 
     @Test
     void shouldCreateMoneyWithBigDecimalAmount() {
         Money money = Money.of(new BigDecimal("100.99"), "USD");
 
-        assertEquals(new BigDecimal("100.99"), money.getAmount());
-        assertEquals("USD", money.getCurrency());
+        assertEquals(new BigDecimal("100.99"), money.amount());
+        assertEquals("USD", money.currency());
     }
 
     @Test
     void shouldConvertCurrencyToUppercase() {
         Money money = Money.of(10.0, "eur");
 
-        assertEquals("EUR", money.getCurrency());
+        assertEquals("EUR", money.currency());
     }
 
     @Test
     void shouldRoundAmountToTwoDecimals() {
         Money money = Money.of(10.999, "EUR");
 
-        assertEquals(new BigDecimal("11.00"), money.getAmount());
+        assertEquals(new BigDecimal("11.00"), money.amount());
     }
 
     @Test

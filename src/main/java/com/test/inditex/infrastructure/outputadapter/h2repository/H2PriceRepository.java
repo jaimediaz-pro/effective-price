@@ -45,8 +45,8 @@ public class H2PriceRepository implements PriceRepository {
                 new PriceRowMapper(),
                 effectiveTimestamp,
                 effectiveTimestamp,
-                productId.getValue(),
-                brandId.getValue());
+                productId.value(),
+                brandId.value());
 
         return results.isEmpty() ? Optional.empty() : Optional.of(results.get(0));
     }

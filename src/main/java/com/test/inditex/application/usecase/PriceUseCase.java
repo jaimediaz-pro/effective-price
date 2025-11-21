@@ -27,8 +27,8 @@ public class PriceUseCase implements PriceInputPort {
         return priceRepository.findEffectivePrice(effectiveDate, productId, brandId)
                 .orElseThrow(() -> new PriceNotFoundException(
                         String.format("No price found for product %s, brand %s on date %s",
-                                productId.getValue(),
-                                brandId.getValue(),
+                                productId.value(),
+                                brandId.value(),
                                 effectiveDate)));
     }
 }

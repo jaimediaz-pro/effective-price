@@ -10,7 +10,7 @@ class BrandIdTest {
     void shouldCreateBrandIdWithValidValue() {
         BrandId brandId = BrandId.of(1);
 
-        assertEquals(1, brandId.getValue());
+        assertEquals(1, brandId.value());
     }
 
     @Test

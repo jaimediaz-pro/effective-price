@@ -10,7 +10,7 @@ class ProductIdTest {
     void shouldCreateProductIdWithValidValue() {
         ProductId productId = ProductId.of(35455L);
 
-        assertEquals(35455L, productId.getValue());
+        assertEquals(35455L, productId.value());
     }
 
     @Test

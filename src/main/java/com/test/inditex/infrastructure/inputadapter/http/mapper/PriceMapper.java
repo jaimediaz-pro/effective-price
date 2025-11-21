@@ -21,13 +21,13 @@ public class PriceMapper {
         }
 
         return new PriceDTO(
-                price.getProductId().getValue(),
-                price.getBrandId().getValue(),
+                price.getProductId().value(),
+                price.getBrandId().value(),
                 price.getPriceList(),
-                price.getValidityPeriod().getStartDate(),
-                price.getValidityPeriod().getEndDate(),
+                price.getValidityPeriod().startDate(),
+                price.getValidityPeriod().endDate(),
                 effectiveDate,
-                price.getMoney().getAmount().doubleValue(),
-                price.getMoney().getCurrency());
+                price.getMoney().amount().doubleValue(),
+                price.getMoney().currency());
     }
 }
